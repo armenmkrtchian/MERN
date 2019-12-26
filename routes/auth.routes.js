@@ -1,5 +1,7 @@
 const {Router} = require('express')
 const bcrypt = require('bcryptjs')
+const config = require('config')
+const jwt = require('jsonwebtoken')
 const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
 const router = Router()
@@ -72,6 +74,14 @@ router.post(
         if (!isMatch) {
             return res.status(400).json({ message: 'Incorrect password, please try again' })
         }
+
+        const token = jwt.sign(
+            { userId: user.id },
+            config.get('jwtSecret'),
+            { expiresIn: '1h' }
+        )
+
+        res.json({ token, userId: user.id })
 
     } catch {
         res.status(500).jsin({ message: 'Something went wrong, please try again!' })
