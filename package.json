@@ -1,0 +1,33 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "Mern stack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "server": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armenmkrtchian/MERN.git"
+  },
+  "keywords": [
+    "mern",
+    "react"
+  ],
+  "author": "Armen Mkrtchian <armenmkrtchian93@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armenmkrtchian/MERN/issues"
+  },
+  "homepage": "https://github.com/armenmkrtchian/MERN#readme",
+  "dependencies": {
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "nodemon": "^2.0.2"
+  }
+}
